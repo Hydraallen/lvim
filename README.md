@@ -1,30 +1,27 @@
 <!-- Shields -->
 <!-- {{{1 -->
 
-[![GitHub License](https://img.shields.io/github/license/jimcornmell/lvim)](https://github.com/jimcornmell/lvim/blob/master/LICENSE)
-[![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/jimcornmell/lvim)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![Web Site](https://img.shields.io/badge/Jims%20Cosmos-website-red)](https://JimsCosmos.com)
+![update](https://img.shields.io/badge/status-updating-brightgreen.svg)
+[![GitHub License](https://img.shields.io/github/license/hydraallen/lvim)](https://github.com/Hydraallenl/lvim/blob/master/LICENSE)
+[![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Hydraallen/lvim)
 
 <!-- }}}1 -->
 
 <!-- Main Image -->
 <!-- {{{1 -->
-
 ![LunarVim Demo](./media/lunarvim_logo_dark.png)
-![LunarVim](./media/demo_screen.png)
+![LunarVim](./media/demo_screen_1.jpeg)
+![LunarVim](./media/demo_screen_2.jpeg)
 
 <!-- }}}1 -->
 
 <!-- Introduction -->
 <!-- {{{1 -->
 
-This is a set of config files for the **brilliant** configuration project
-[LunarVim](https://github.com/ChristianChiarulli/LunarVim) by [Christian
-Chiarulli](https://twitter.com/intent/follow?screen_name=chrisatmachine).
-I've been using VI on and off as my daily editor since the early 1990's and
-Christian's setup is the best I've seen so I've just plagiarized it and added a
-few of my own twists.
+This is a set of config files based on [LunarVim](https://github.com/ChristianChiarulli/LunarVim) by [Christian Chiarulli](https://twitter.com/intent/follow?screen_name=chrisatmachine). I refered to [jimcornmell's config file](https://github.com/jimcornmell/lvim) and [abzcoding's config file](https://github.com/abzcoding/lvim).
+
+Personally, I began using [vim](https://www.vim.org/) since 2022 September and started to use [neovim](https://neovim.io/) and [lunarvim](https://www.lunarvim.org/) at the beginning of 2023.
+
 
 The main changes are documented below:
 

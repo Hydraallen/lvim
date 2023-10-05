@@ -3,6 +3,7 @@ Useful Links and TODO
 http://cheat.sh
 Buffer bar info: https://github.com/romgrk/barbar.nvim
 -- }}}1 ]]
+
 --[[ Settings {{{1
 lvim is the global options object
 
@@ -31,8 +32,13 @@ vim.opt.wrap                                        = true -- wrap lines
 lvim.use_icons                                      = true
 lvim.format_on_save                                 = false
 lvim.auto_complete                                  = true
---lvim.colorscheme                                              = "zenburn"   -- https://github.com/jnurmine/Zenburn
---lvim.colorscheme                                              = "tokyonight"
+--lvim.colorscheme                                  = "zenburn"   -- https://github.com/jnurmine/Zenburn
+--lvim.colorscheme                                  = "tokyonight"
+lvim.colorscheme                                    = "onedark_vivid"   -- https://github.com/olimorris/onedarkpro.nvim
+--lvim.colorscheme                                    = "onedark"   
+--lvim.colorscheme                                    = "onelight"   
+--lvim.colorscheme                                    = "onedark_dark"  
+
 lvim.auto_close_tree                                = 0
 lvim.wrap_lines                                     = true
 lvim.timeoutlen                                     = 100
@@ -124,7 +130,6 @@ lvim.builtin.gitsigns.opts.signs.changedelete.text   = iconExclamation
 -- }
 --}}}
 
-
 -- Vim config {{{1
 vim.cmd('source ~/.config/lvim/user.vim')
 vim.cmd('source ~/.config/lvim/lua/user/lualine.lua')
@@ -132,6 +137,11 @@ vim.cmd('source ~/.config/lvim/lua/user/lualine.lua')
 
 -- Additional Plugins {{{1
 lvim.plugins = {
+    --One Dark Theme
+    {
+  "olimorris/onedarkpro.nvim",
+  priority = 1000 -- Ensure it loads first
+    },
     -- Zen Mode
     {
         "folke/zen-mode.nvim",
@@ -1097,7 +1107,7 @@ local function getRandomHeader()
       [[                   `----._:: ::'  :   :: ::'  _.----'                    ]],
       [[                          `--.       ;::  .--'                           ]],
       [[                              `-. .:'  .-'                               ]],
-      [[                                 \    / :F_P:                            ]],
+      [[                                 \    /                                  ]],
       [[                                  \  /                                   ]],
       [[                                   \/                                    ]],
       [[]],
