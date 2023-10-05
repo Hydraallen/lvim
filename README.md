@@ -25,16 +25,12 @@ Personally, I began using [vim](https://www.vim.org/) since 2022 September and s
 
 The main changes are documented below:
 
-- My config for status line.
-- My dashboard.
+- Config for status line.
+- Dashboard.
 - Custom Keybindings.
 - Custom Colours.
 - and much more.
 
-I intend to merge Christian's changes into my config regularly to keep up with
-his brilliant work.
-
-If your interested my website is [![Web Site](https://img.shields.io/badge/Jims%20Cosmos-website-red)](https://JimsCosmos.com)
 
 <!-- }}}1 -->
 
@@ -59,6 +55,30 @@ If your interested my website is [![Web Site](https://img.shields.io/badge/Jims%
 - Follow the instructions on [Christian's site](https://github.com/ChristianChiarulli/LunarVim)
 - Download this repo to `~/.config/lvim`
 
+```bash
+$ mv ~/.config/lvim ~/.config/lvim_backup
+$ git clone https://github.com/abzcoding/lvim.git ~/.config/lvim
+$ lvim +LvimUpdate +LvimCacheReset +q
+$ lvim # run :Lazy sync
+```
+
+### Recommended Fonts
+
+- [FiraCode]: My preferred nerd font
+- Any of the [Nerd Fonts]
+
+On macOS with Homebrew, choose one of the [Nerd Fonts],
+for example, here are some popular fonts:
+
+```shell
+$ brew tap homebrew/cask-fonts
+$ brew search nerd-font
+$ brew install --cask font-fira-code-nerd-font
+$ brew install --cask font-victor-mono-nerd-font
+$ brew install --cask font-iosevka-nerd-font-mono
+$ brew install --cask font-hack-nerd-font
+```
+
 <!-- }}}1 -->
 
 # Visual Appearance
@@ -67,11 +87,19 @@ If your interested my website is [![Web Site](https://img.shields.io/badge/Jims%
 
 ![Visual Appearance](./media/visual_appearance.png)
 
-- I use zenburn theme. One of the reasons for this is that its available in virtually
-  any plug-in/app/program that allows theming, so I can near consistent code theming
-  everywhere.
-- I've added vertical markers at 80 and 120 characters.
-  - The status line displays the current column and line length, these change colour at 80 and 120 characters.
+- I use [onedark](https://github.com/olimorris/onedarkpro.nvim) theme as I also used it for VSCode.
+
+You can change it to zenburn or tokyonight by editing [`config.lua`](https://github.com/Hydraallen/lvim/blob/main/config.lua)
+
+```lua
+lvim.colorscheme                                  	= "zenburn"   -- https://github.com/jnurmine/Zenburn
+lvim.colorscheme                                  	= "tokyonight"
+lvim.colorscheme                                    = "onedark_vivid"   -- https://github.com/olimorris/onedarkpro.nvim
+lvim.colorscheme                                    = "onedark"
+lvim.colorscheme                                    = "onelight"
+lvim.colorscheme                                    = "onedark_dark"
+```
+
 - The current cursor line is highlighted in light red
 - The current cursor column is highlighted in light blue
 - Whitespace at the end of a line in highlighted in bright red.
@@ -88,7 +116,7 @@ If your interested my website is [![Web Site](https://img.shields.io/badge/Jims%
 
 <!-- {{{1 -->
 
-The status line configuration can be found [here](https://github.com/jimcornmell/lvim/blob/main/lua/user/lualine.lua)
+The status line configuration can be found [here](https://github.com/Hydraallen/lvim/blob/main/lua/user/lualine.lua)
 
 ![Status Line Normal](./media/status_line_normal.png)
 ![Status Line Insert](./media/status_line_insert.png)
@@ -122,22 +150,21 @@ The line is split into 5 main sections, 3 on the left and 2 on the right:
 
 I've added a few extra plugins I use to the configuration:
 
++ [Codeium](https://github.com/Exafunction/codeium.vim) "Free, ultrafast Copilot alternative for Vim and Neovim"
++ [Lazygit](https://github.com/kdheepak/lazygit.nvim) <kbd>F8</kbd> or `lg` to open.
++ [Ranger](https://github.com/kevinhwang91/rnvimr) `ra` to open.
++ [wakatime](https://wakatime.com/plugins) Record coding time for you.
+
 - [Codi](https://github.com/metakirby5/codi.vim) I alias "bc" on the command line to get a powerful calculator scratchpad using python.
-- [Codeium](https://github.com/Exafunction/codeium.vim) "Free, ultrafast Copilot alternative for Vim and Neovim"
 - [Colorizer](https://github.com/norcalli/nvim-colorizer.lua)
 - [Dial](https://github.com/monaqa/dial.nvim) I've enabled a bunch of the predefined "increment's", also added a few of my own, e.g: True<->False and full month names, logging levels and more.  [See the config for details](lua/user/dial.lua)I
 - [Fugitive](https://github.com/tpope/vim-fugitive) Git plugin from Tim Pope
 - [Highlighturl](https://github.com/itchyny/vim-highlighturl) Highlight urls, jump to them with <kbd>g</kbd><kbd>j</kbd>
-- [Hop](https://github.com/phaazon/hop.nvim) Better motions with <kbd>S</kbd>
-- [Lazygit](https://github.com/kdheepak/lazygit.nvim) <kbd>F8</kbd> to open.
 - [Markdown_preview](https://github.com/iamcco/markdown-preview.nvim) Open a markdown file and ":MarkdownPreview"
-- [Ranger](https://github.com/kevinhwang91/rnvimr) Display with <kbd>Leader</kbd><kbd>r</kbd>
-- [Symbols outline](https://github.com/simrat39/symbols-outline.nvim) Display with <kbd>F12</kbd>
 - [Todo comments](https://github.com/folke/todo-comments.nvim) With a few tweaks....
 - [Vim Eunuch](https://github.com/tpope/vim-eunuch) Vim sugar for the UNIX shell commands that need it the most.  Also makes files starting with `#!` executable.
 - [Vim Signature](https://github.com/kshenoy/vim-signature) A plugin to place, toggle and display marks.
 - [Vim Surround](https://github.com/tpope/vim-surround) Surround.vim is all about "surroundings": parentheses, brackets, quotes, XML tags, and more. The plugin provides mappings to easily delete, change and add such surroundings in pairs.
-- [Zen Mode]( https://github.com/folke/zen-mode.nvim) Toggle with <kbd>Leader</kbd><kbd>z</kbd>
 
 <!-- }}}1 -->
 
