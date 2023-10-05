@@ -32,6 +32,7 @@ lvim.use_icons                                      = true
 lvim.format_on_save                                 = false
 lvim.auto_complete                                  = true
 --lvim.colorscheme                                              = "zenburn"   -- https://github.com/jnurmine/Zenburn
+--lvim.colorscheme                                              = "tokyonight"
 lvim.auto_close_tree                                = 0
 lvim.wrap_lines                                     = true
 lvim.timeoutlen                                     = 100
@@ -127,7 +128,7 @@ lvim.builtin.gitsigns.opts.signs.changedelete.text   = iconExclamation
 
 lvim.builtin.alpha.dashboard.section.header.opts.hl  = ""
 -- Shorter ASCII art logo, so not too much space is taken up.
-lvim.builtin.alpha.dashboard.section.header.val      = {
+lvim.builtin.alpha.dashboard.section.header.val    = {
     "▌              ▌ ▌▗",
     "▌  ▌ ▌▛▀▖▝▀▖▙▀▖▚▗▘▄ ▛▚▀▖",
     "▌  ▌ ▌▌ ▌▞▀▌▌  ▝▞ ▐ ▌▐ ▌",
