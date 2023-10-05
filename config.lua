@@ -798,13 +798,14 @@ lvim.plugins = {
     },
     --copilot
     --{
-    --    'github/copilot.vim'
+    --    'github/copilot.vim',
+    --    event = 'BufEnter'
     --},
     --Codeium completion...
-    {
-        'Exafunction/codeium.vim',
-        event = 'BufEnter'
-    },
+    --{
+    --    'Exafunction/codeium.vim',
+    --    event = 'BufEnter'
+    --},
     -- vim-bundler
     -- lightweight support for ruby's bundler
     -- {
