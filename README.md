@@ -93,12 +93,12 @@ $ brew install --cask font-hack-nerd-font
 You can change it to zenburn or tokyonight by editing [`config.lua`](https://github.com/Hydraallen/lvim/blob/main/config.lua). Or if you want to use the default theme of lunarvim, you can just delete all the following lines.
 
 ```lua
-lvim.colorscheme                                  	= "zenburn"   -- https://github.com/jnurmine/Zenburn
-lvim.colorscheme                                  	= "tokyonight"
-lvim.colorscheme                                    = "onedark_vivid"   -- https://github.com/olimorris/onedarkpro.nvim
-lvim.colorscheme                                    = "onedark"
-lvim.colorscheme                                    = "onelight"
-lvim.colorscheme                                    = "onedark_dark"
+lvim.colorscheme             = "zenburn"   -- https://github.com/jnurmine/Zenburn
+lvim.colorscheme             = "tokyonight"
+lvim.colorscheme             = "onedark_vivid"   -- https://github.com/olimorris/onedarkpro.nvim
+lvim.colorscheme             = "onedark"
+lvim.colorscheme             = "onelight"
+lvim.colorscheme             = "onedark_dark"
 ```
 
 - The current cursor line is highlighted in light red
