@@ -52,16 +52,18 @@ The main changes are documented below:
 
 <!-- {{{1 -->
 
-- Follow the instructions on [Christian's site](https://github.com/ChristianChiarulli/LunarVim)
-- Download this repo to `~/.config/lvim`
+- First of all, follow the instructions on [Christian's site](https://github.com/ChristianChiarulli/LunarVim) to install lunarvim.
+- Download this repo to `~/.config/lvim`.(Commands below are for reference.)
 
-```bash
+```shell
 $ mv ~/.config/lvim ~/.config/lvim_backup
-$ git clone https://github.com/abzcoding/lvim.git ~/.config/lvim
+$ git clone https://github.com/Hydraallen/lvim.git ~/.config/lvim
 $ lvim +LvimUpdate +LvimCacheReset +q
 $ lvim # run :Lazy sync
 $ lvim # run :LspInstall sqlls
 ```
+
+`:Lazy sync` and `:LspInstall sqlls` should be run inside lunarvim.
 
 ### Recommended Fonts
 
