@@ -60,6 +60,7 @@ $ mv ~/.config/lvim ~/.config/lvim_backup
 $ git clone https://github.com/abzcoding/lvim.git ~/.config/lvim
 $ lvim +LvimUpdate +LvimCacheReset +q
 $ lvim # run :Lazy sync
+$ lvim # run :LspInstall sqlls
 ```
 
 ### Recommended Fonts
@@ -187,7 +188,7 @@ See my dotfiles for a simple bash script to convert this GitHut markdown file in
 - [HTML Cheatsheet](cheatsheet.html)
 - [PNG Cheatsheet](./media/cheatsheet.png)
 
-![Cheatsheet](./media/cheatsheet.png)
+![](./media/cheatsheet.png)
 
 <!-- }}}1 -->
 
@@ -202,3 +203,10 @@ See my dotfiles for a simple bash script to convert this GitHut markdown file in
 |                      [![VimAwesome](https://img.shields.io/badge/VimAwesome-website-red)](https://vimawesome.com)                       |                                                        &nbsp;                                                        |                                                      &nbsp;                                                       |
 
 <!-- }}}1 -->
+
+
+
+# Troubleshooting
+
+1. Check your neovim version. Are you on the newest nightly version?
+2. Reset your packer cache, and update lvim.
