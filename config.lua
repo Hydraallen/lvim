@@ -797,13 +797,14 @@ lvim.plugins = {
         'ekalinin/Dockerfile.vim'
     },
     --copilot
+    --{
+    --    'github/copilot.vim'
+    --},
+    --Codeium completion...
     {
-        'github/copilot.vim'
+        'Exafunction/codeium.vim',
+        event = 'BufEnter'
     },
-    -- Codeium completion...
---    {
---        'Exafunction/codeium.vim'
---    },
     -- vim-bundler
     -- lightweight support for ruby's bundler
     -- {
