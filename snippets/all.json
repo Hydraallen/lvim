@@ -1,0 +1,356 @@
+{
+  "date": {
+    "body": [
+      "$CURRENT_YEAR/$CURRENT_MONTH/$CURRENT_DATE $0"
+    ],
+    "description": "Date YYYY/MM/DD",
+    "prefix": "__date"
+  },
+  "fixjc": {
+    "body": [
+      "$LINE_COMMENT FIXJC: $CURRENT_YEAR $CURRENT_MONTH_NAME $CURRENT_DATE $0"
+    ],
+    "description": "FIXJC command block with date",
+    "prefix": "__fixjc"
+  },
+  "httpGetScript": {
+    "body": [
+      "### Get $0",
+      "",
+      "GET {{host}}/api/version",
+      "Accept: application/json",
+      "",
+      "> {%",
+      "    client.test(\"Expect request to return 200\", function() {",
+      "            client.assert(response.status === 200, \"Response status is not 200: \" + response.status);",
+      "            });",
+      "    client.test(\"Expect response content-type to be json\", function() {",
+      "            var type = response.contentType.mimeType;",
+      "            client.assert(type === \"application/json\", \"Expected 'application/json' but received '\" + type + \"'\");",
+      "            });",
+      "%}",
+      ""
+    ],
+    "description": "HTTP Post Script",
+    "prefix": "__httpPostScript"
+  },
+  "httpPreScript": {
+    "body": [
+      "< {%",
+      "    const timestamp = Math.floor(new Date().getTime() / 1000);",
+      "    request.variables.set(\"timestamp\", timestamp)",
+      "    request.variables.set(\"signature\", crypto.hmac.sha256().withTextSecret(API_KEY).updateWithText(\"timestamp=\" + timestamp).digest().toHex());",
+      "%}",
+      "$0"
+    ],
+    "description": "HTTP request pre script",
+    "prefix": "__httpPreScript"
+  },
+  "line80chars": {
+    "body": [
+      "$LINE_COMMENT --------------------------------------------------------------------------------"
+    ],
+    "description": "Line separator",
+    "prefix": "__line80chars"
+  },
+  "lorem_ipsum": {
+    "body": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et magnis dis parturient montes nascetur ridiculus mus. Magna ac placerat vestibulum lectus. Odio ut sem nulla pharetra diam sit amet nisl suscipit. Eu consequat ac felis donec. Vivamus at augue eget arcu dictum varius duis at. Diam maecenas sed enim ut sem viverra aliquet eget sit. Risus at ultrices mi tempus imperdiet nulla malesuada pellentesque. Nisl tincidunt eget nullam non nisi est sit amet. Sem integer vitae justo eget magna. Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus. Eu nisl nunc mi ipsum. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Sed viverra tellus in hac habitasse platea dictumst vestibulum. Aliquet nibh praesent tristique magna sit. Lectus proin nibh nisl condimentum id venenatis a condimentum vitae. A lacus vestibulum sed arcu non. Fringilla phasellus faucibus scelerisque eleifend. Molestie a iaculis at erat pellentesque adipiscing commodo elit. Malesuada proin libero nunc consequat interdum varius sit."
+    ],
+    "description": "1 Para of Lorem Ipsum",
+    "prefix": "__lorem_ipsum"
+  },
+  "lorem_ipsum2para": {
+    "body": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et magnis dis parturient montes nascetur ridiculus mus. Magna ac placerat vestibulum lectus. Odio ut sem nulla pharetra diam sit amet nisl suscipit. Eu consequat ac felis donec. Vivamus at augue eget arcu dictum varius duis at. Diam maecenas sed enim ut sem viverra aliquet eget sit. Risus at ultrices mi tempus imperdiet nulla malesuada pellentesque. Nisl tincidunt eget nullam non nisi est sit amet. Sem integer vitae justo eget magna. Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus. Eu nisl nunc mi ipsum. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Sed viverra tellus in hac habitasse platea dictumst vestibulum. Aliquet nibh praesent tristique magna sit. Lectus proin nibh nisl condimentum id venenatis a condimentum vitae. A lacus vestibulum sed arcu non. Fringilla phasellus faucibus scelerisque eleifend. Molestie a iaculis at erat pellentesque adipiscing commodo elit. Malesuada proin libero nunc consequat interdum varius sit.",
+      "Massa placerat duis ultricies lacus sed turpis tincidunt. Est sit amet facilisis magna etiam tempor orci. At elementum eu facilisis sed odio morbi quis commodo. Nunc congue nisi vitae suscipit. Scelerisque felis imperdiet proin fermentum leo vel orci porta. Tincidunt vitae semper quis lectus nulla. Quam adipiscing vitae proin sagittis nisl rhoncus mattis. Sagittis vitae et leo duis. Sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque. Cursus turpis massa tincidunt dui ut. Viverra nibh cras pulvinar mattis. Aenean et tortor at risus viverra."
+    ],
+    "description": "2 Paras of Lorem Ipsum",
+    "prefix": "__lorem_ipsum2para"
+  },
+  "lorem_ipsum3para": {
+    "body": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et magnis dis parturient montes nascetur ridiculus mus. Magna ac placerat vestibulum lectus. Odio ut sem nulla pharetra diam sit amet nisl suscipit. Eu consequat ac felis donec. Vivamus at augue eget arcu dictum varius duis at. Diam maecenas sed enim ut sem viverra aliquet eget sit. Risus at ultrices mi tempus imperdiet nulla malesuada pellentesque. Nisl tincidunt eget nullam non nisi est sit amet. Sem integer vitae justo eget magna. Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus. Eu nisl nunc mi ipsum. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Sed viverra tellus in hac habitasse platea dictumst vestibulum. Aliquet nibh praesent tristique magna sit. Lectus proin nibh nisl condimentum id venenatis a condimentum vitae. A lacus vestibulum sed arcu non. Fringilla phasellus faucibus scelerisque eleifend. Molestie a iaculis at erat pellentesque adipiscing commodo elit. Malesuada proin libero nunc consequat interdum varius sit.",
+      "Massa placerat duis ultricies lacus sed turpis tincidunt. Est sit amet facilisis magna etiam tempor orci. At elementum eu facilisis sed odio morbi quis commodo. Nunc congue nisi vitae suscipit. Scelerisque felis imperdiet proin fermentum leo vel orci porta. Tincidunt vitae semper quis lectus nulla. Quam adipiscing vitae proin sagittis nisl rhoncus mattis. Sagittis vitae et leo duis. Sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque. Cursus turpis massa tincidunt dui ut. Viverra nibh cras pulvinar mattis. Aenean et tortor at risus viverra.",
+      "Aliquet bibendum enim facilisis gravida. Egestas maecenas pharetra convallis posuere morbi leo. Turpis egestas maecenas pharetra convallis posuere morbi leo urna. Duis tristique sollicitudin nibh sit amet commodo nulla facilisi. Egestas sed sed risus pretium quam vulputate dignissim. Nulla aliquet porttitor lacus luctus. Aenean pharetra magna ac placerat vestibulum lectus mauris. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Lorem mollis aliquam ut porttitor leo a. Facilisi etiam dignissim diam quis enim. Sed id semper risus in. Rhoncus dolor purus non enim praesent elementum facilisis. Vel facilisis volutpat est velit egestas dui id ornare. Et tortor consequat id porta nibh venenatis cras sed. Neque aliquam vestibulum morbi blandit cursus risus at ultrices. Tellus mauris a diam maecenas sed. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Elit sed vulputate mi sit amet mauris. Ut sem viverra aliquet eget sit amet tellus cras. Malesuada fames ac turpis egestas."
+    ],
+    "description": "3 Paras of Lorem Ipsum",
+    "prefix": "__lorem_ipsum3para"
+  },
+  "lorem_ipsum4para": {
+    "body": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et magnis dis parturient montes nascetur ridiculus mus. Magna ac placerat vestibulum lectus. Odio ut sem nulla pharetra diam sit amet nisl suscipit. Eu consequat ac felis donec. Vivamus at augue eget arcu dictum varius duis at. Diam maecenas sed enim ut sem viverra aliquet eget sit. Risus at ultrices mi tempus imperdiet nulla malesuada pellentesque. Nisl tincidunt eget nullam non nisi est sit amet. Sem integer vitae justo eget magna. Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus. Eu nisl nunc mi ipsum. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Sed viverra tellus in hac habitasse platea dictumst vestibulum. Aliquet nibh praesent tristique magna sit. Lectus proin nibh nisl condimentum id venenatis a condimentum vitae. A lacus vestibulum sed arcu non. Fringilla phasellus faucibus scelerisque eleifend. Molestie a iaculis at erat pellentesque adipiscing commodo elit. Malesuada proin libero nunc consequat interdum varius sit.",
+      "Massa placerat duis ultricies lacus sed turpis tincidunt. Est sit amet facilisis magna etiam tempor orci. At elementum eu facilisis sed odio morbi quis commodo. Nunc congue nisi vitae suscipit. Scelerisque felis imperdiet proin fermentum leo vel orci porta. Tincidunt vitae semper quis lectus nulla. Quam adipiscing vitae proin sagittis nisl rhoncus mattis. Sagittis vitae et leo duis. Sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque. Cursus turpis massa tincidunt dui ut. Viverra nibh cras pulvinar mattis. Aenean et tortor at risus viverra.",
+      "Aliquet bibendum enim facilisis gravida. Egestas maecenas pharetra convallis posuere morbi leo. Turpis egestas maecenas pharetra convallis posuere morbi leo urna. Duis tristique sollicitudin nibh sit amet commodo nulla facilisi. Egestas sed sed risus pretium quam vulputate dignissim. Nulla aliquet porttitor lacus luctus. Aenean pharetra magna ac placerat vestibulum lectus mauris. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Lorem mollis aliquam ut porttitor leo a. Facilisi etiam dignissim diam quis enim. Sed id semper risus in. Rhoncus dolor purus non enim praesent elementum facilisis. Vel facilisis volutpat est velit egestas dui id ornare. Et tortor consequat id porta nibh venenatis cras sed. Neque aliquam vestibulum morbi blandit cursus risus at ultrices. Tellus mauris a diam maecenas sed. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Elit sed vulputate mi sit amet mauris. Ut sem viverra aliquet eget sit amet tellus cras. Malesuada fames ac turpis egestas.",
+      "Ut morbi tincidunt augue interdum velit. Neque sodales ut etiam sit. Sit amet justo donec enim diam vulputate ut pharetra. Volutpat odio facilisis mauris sit amet massa vitae tortor. Ultricies integer quis auctor elit sed vulputate mi sit. Et egestas quis ipsum suspendisse ultrices gravida. Purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus. Sapien et ligula ullamcorper malesuada proin libero nunc consequat interdum. Blandit cursus risus at ultrices. Sodales ut eu sem integer vitae justo eget."
+    ],
+    "description": "4 Paras of Lorem Ipsum",
+    "prefix": "__lorem_ipsum4para"
+  },
+  "lorem_ipsum5para": {
+    "body": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et magnis dis parturient montes nascetur ridiculus mus. Magna ac placerat vestibulum lectus. Odio ut sem nulla pharetra diam sit amet nisl suscipit. Eu consequat ac felis donec. Vivamus at augue eget arcu dictum varius duis at. Diam maecenas sed enim ut sem viverra aliquet eget sit. Risus at ultrices mi tempus imperdiet nulla malesuada pellentesque. Nisl tincidunt eget nullam non nisi est sit amet. Sem integer vitae justo eget magna. Mauris pellentesque pulvinar pellentesque habitant morbi tristique senectus. Eu nisl nunc mi ipsum. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor. Sed viverra tellus in hac habitasse platea dictumst vestibulum. Aliquet nibh praesent tristique magna sit. Lectus proin nibh nisl condimentum id venenatis a condimentum vitae. A lacus vestibulum sed arcu non. Fringilla phasellus faucibus scelerisque eleifend. Molestie a iaculis at erat pellentesque adipiscing commodo elit. Malesuada proin libero nunc consequat interdum varius sit.",
+      "Massa placerat duis ultricies lacus sed turpis tincidunt. Est sit amet facilisis magna etiam tempor orci. At elementum eu facilisis sed odio morbi quis commodo. Nunc congue nisi vitae suscipit. Scelerisque felis imperdiet proin fermentum leo vel orci porta. Tincidunt vitae semper quis lectus nulla. Quam adipiscing vitae proin sagittis nisl rhoncus mattis. Sagittis vitae et leo duis. Sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque. Cursus turpis massa tincidunt dui ut. Viverra nibh cras pulvinar mattis. Aenean et tortor at risus viverra.",
+      "Aliquet bibendum enim facilisis gravida. Egestas maecenas pharetra convallis posuere morbi leo. Turpis egestas maecenas pharetra convallis posuere morbi leo urna. Duis tristique sollicitudin nibh sit amet commodo nulla facilisi. Egestas sed sed risus pretium quam vulputate dignissim. Nulla aliquet porttitor lacus luctus. Aenean pharetra magna ac placerat vestibulum lectus mauris. Vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat. Lorem mollis aliquam ut porttitor leo a. Facilisi etiam dignissim diam quis enim. Sed id semper risus in. Rhoncus dolor purus non enim praesent elementum facilisis. Vel facilisis volutpat est velit egestas dui id ornare. Et tortor consequat id porta nibh venenatis cras sed. Neque aliquam vestibulum morbi blandit cursus risus at ultrices. Tellus mauris a diam maecenas sed. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Elit sed vulputate mi sit amet mauris. Ut sem viverra aliquet eget sit amet tellus cras. Malesuada fames ac turpis egestas.",
+      "Ut morbi tincidunt augue interdum velit. Neque sodales ut etiam sit. Sit amet justo donec enim diam vulputate ut pharetra. Volutpat odio facilisis mauris sit amet massa vitae tortor. Ultricies integer quis auctor elit sed vulputate mi sit. Et egestas quis ipsum suspendisse ultrices gravida. Purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus. Sapien et ligula ullamcorper malesuada proin libero nunc consequat interdum. Blandit cursus risus at ultrices. Sodales ut eu sem integer vitae justo eget.",
+      "Malesuada bibendum arcu vitae elementum curabitur vitae. Fermentum iaculis eu non diam phasellus vestibulum lorem sed risus. Nulla aliquet enim tortor at auctor urna nunc id cursus. Cursus turpis massa tincidunt dui ut ornare lectus sit. Id leo in vitae turpis massa. Sagittis aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc. Enim nec dui nunc mattis enim ut. Varius quam quisque id diam. Pulvinar elementum integer enim neque volutpat ac tincidunt vitae. Faucibus pulvinar elementum integer enim neque volutpat ac tincidunt vitae. Est ante in nibh mauris cursus mattis molestie. Vitae purus faucibus ornare suspendisse sed nisi lacus. Elementum nibh tellus molestie nunc non blandit massa enim nec. Faucibus vitae aliquet nec ullamcorper sit amet risus nullam. Vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt. Purus faucibus ornare suspendisse sed nisi. Iaculis at erat pellentesque adipiscing commodo elit at imperdiet. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. Sit amet massa vitae tortor condimentum lacinia quis. Leo vel orci porta non pulvinar neque laoreet suspendisse interdum."
+    ],
+    "description": "5 Paras of Lorem Ipsum",
+    "prefix": "__lorem_ipsum5para"
+  },
+  "new_bash": {
+    "body": [
+      "#!/usr/bin/env bash",
+      "# shellcheck source=/home/jim/bin/libs/globals.sh",
+      ". ~/bin/libs/globals.sh",
+      "$0"
+    ],
+    "description": "New bash file, short format",
+    "prefix": "__new_bash"
+  },
+  "new_bash_file": {
+    "body": [
+      "#!/usr/bin/env bash",
+      "# shellcheck source=/home/jim/bin/libs/globals.sh",
+      ". ~/bin/libs/globals.sh",
+      "",
+      "# @version       1.0",
+      "# @script        # TODO: name",
+      "# @description   # TODO: desc",
+      "",
+      "CMD=\\$(basename \"\\$0\")",
+      "FORCE=false",
+      "QUIET=false",
+      "VERBOSE=false",
+      "",
+      "#  __                  _   _",
+      "# / _|_   _ _ __   ___| |_(_) ___  _ __  ___",
+      "#| |_| | | | '_ \\ / __| __| |/ _ \\| '_ \\/ __|",
+      "#|  _| |_| | | | | (__| |_| | (_) | | | \\__ \\",
+      "#|_|  \\__,_|_| |_|\\___|\\__|_|\\___/|_| |_|___/",
+      "",
+      "# A function {{{",
+      "function_name() {",
+      "    local firstParam=\\$1",
+      "    local secondParam=\\$2",
+      "",
+      "    # TODO: func",
+      "    echo \"\\$firstParam\"",
+      "    echo \"\\$secondParam\"",
+      "}",
+      "# }}}",
+      "",
+      "# print_usage {{{",
+      "print_usage() {",
+      "    local txt=\\$1",
+      "    outnl \\$cyan \"\\$CMD tool v1.0\"",
+      "    log_error \"\\$txt\"",
+      "    echo \"Force = \\$FORCE\"",
+      "    echo \"Quiet = \\$QUIET\"",
+      "    echo \"Verbose = \\$VERBOSE\"",
+      "    echo \"Command = \\$CMD\"",
+      "",
+      "    echo \"",
+      "Usage:",
+      "    COMMAND          PROJECT   BRANCH          DESCRIPTION",
+      "    all             {PROJECT} {BRANCH}        Goto All of the below locations",
+      "    art*            {PROJECT}                 Goto artifactory",
+      "",
+      "Some command accept 1 or 2 more arguments, the first is the project, the second is the branch.",
+      "",
+      "E.g:",
+      "    dev ticket",
+      "    dev ticket ABC-1234",
+      "    dev health",
+      "    dev health my-project-name",
+      "\"",
+      "    exit 1",
+      "}",
+      "# }}}",
+      "",
+      "# _ __ ___   __ _(_)_ __",
+      "#| '_ ` _ \\ / _` | | '_ \\",
+      "#| | | | | | (_| | | | | |",
+      "#|_| |_| |_|\\__,_|_|_| |_|",
+      "",
+      "",
+      "main() {",
+      "    while getopts :hfqvl:- arg",
+      "    do",
+      "        case \\$arg in",
+      "            h) print_usage \"Help\";;",
+      "            f) FORCE=true ;;",
+      "            q) QUIET=true ;;",
+      "            v) VERBOSE=true ;;",
+      "            l) [[ \\$OPTARG == -* ]] && log_error \"Option -\\$arg requires an argument!\" && print_usage \"Missing argument to \\$arg\" && exit 2",
+      "                echo \"Argument to l = \\$OPTARG\"",
+      "                ;;",
+      "            -)",
+      "                if [[ \\${!OPTIND} == -* ]]; then",
+      "                    unset -v value",
+      "                else",
+      "                    value=\"\\${!OPTIND}\"",
+      "                    ((OPTIND++))",
+      "                fi",
+      "",
+      "                case \\$OPTARG in",
+      "                    host)",
+      "                        HOST=\\$value",
+      "                        echo \\$HOST",
+      "                        ;;",
+      "                    port)",
+      "                        if [[ ! \\$value =~ ^[0-9]+\\$ ]]; then",
+      "                            log_error \"Option --\\$OPTARG missing a parameter. \\\\\"\\$value\\\\\" missing.\"",
+      "                            print_usage \"Port\"",
+      "                            exit 2",
+      "                        fi",
+      "                        ;;",
+      "                    *)",
+      "                        log_error \"Parameter '--\\$OPTARG' unknown !\"",
+      "                        print_usage \"Port\"",
+      "                        exit 2",
+      "                        ;;",
+      "                    esac",
+      "                ;;",
+      "            :)",
+      "                [[ \\$arg == : ]] && log_error \"Option -\\$OPTARG requires an argument!\"",
+      "                exit \"\\$([[ \"\\$arg\" == \"h\" ]] && echo \"0\" || echo \"2\")\"",
+      "                ;;",
+      "            ?)  log_error \"Invalid option -\\${OPTARG}\" ;;",
+      "        esac",
+      "    done",
+      "",
+      "    echo \"Force = \\$FORCE\"",
+      "    echo \"Quiet = \\$QUIET\"",
+      "    echo \"Verbose = \\$VERBOSE\"",
+      "    echo \"Command = \\$CMD\"",
+      "}",
+      "",
+      "main \"\\$@\"",
+      "",
+      "$0"
+    ],
+    "description": "New BASH script template",
+    "prefix": "__new_bash_file"
+  },
+  "new_python_file": {
+    "body": [
+      "#!/usr/bin/env python3",
+      "# ~/bin/libs/globals.py",
+      "from globals import RichWrapper",
+      "",
+      "rw = RichWrapper()",
+      "",
+      "rw.outerror(\"A serious error!\")",
+      "rw.outwarning(\"A warning!\")",
+      "rw.outinfo(\"Some information!\")",
+      "rw.outnote(\"A note!\")",
+      "rw.outbox(\"Colour [red]box\")",
+      "rw.outnonl(\"hello [yellow]world from first outnonl\")",
+      "rw.outnl(\" [red on white] hello [yellow]world from outnl\")",
+      "rw.outline(\"Progress [red]text\")",
+      "rw.runcmd(\"Start message 1...\", \"Done [yellow]thing 1\", \"sleep 1\")",
+      "",
+      "rw.outline(\"Progress\")",
+      "for step in track(range(100), description=\"Writing some long thing Story...\"):",
+      "    sleep(0.01)",
+      "",
+      "rw.outhr()",
+      "$0",
+      ""
+    ],
+    "description": "New Python3 script template",
+    "prefix": "__new_python_file"
+  },
+  "snippet": {
+    "body": [
+      "\"Short title\": {",
+      "  \"prefix\": \"keysequence\",",
+      "  \"body\": [",
+      "    \"The bode of the snippet\"",
+      "  ],",
+      "  \"description\": \"Longer description\"",
+      "},"
+    ],
+    "description": "Snippet template",
+    "prefix": "__snippet"
+  },
+  "snipvars": {
+    "body": [
+      "$BLOCK_COMMENT_START",
+      "See: https://macromates.com/manual/en/environment_variables",
+      "And: https://github.com/L3MON4D3/LuaSnip/blob/master/lua/luasnip/util/environ.lua",
+      "",
+      "Example: ",
+      "    const \\$0 = \\${1:cond} ? \\${2:true value} : \\${3:false value}",
+      "    Choice: \\${4|one,two,three|}",
+      "    $ENV{'HOME'}",
+      "",
+      "The tab size                                                                    TM_TAB_SIZE                 = $TM_TAB_SIZE",
+      "Points to the Support folder of the bundle that ran the item                    TM_BUNDLE_SUPPORT           = $TM_BUNDLE_SUPPORT",
+      "The top-level folder in the project drawer                                      TM_PROJECT_DIRECTORY        = $TM_PROJECT_DIRECTORY",
+      "The scope that the caret is inside                                              TM_SCOPE                    = $TM_SCOPE",
+      "Full path of the first selected file or folder                                  TM_SELECTED_FILE            = $TM_SELECTED_FILE",
+      "Space separated list of the files and folders selected in the project drawer    TM_SELECTED_FILES           = $TM_SELECTED_FILES",
+      "Will have the value YES if the user has enabled soft tabs, otherwise NO         TM_SOFT_TABS                = $TM_SOFT_TABS",
+      "Will have the value YES if the user has enabled soft tabs, otherwise NO         TM_SOFT_TAB                 = $TM_SOFT_TAB",
+      "This variable points to that support folder                                     TM_SUPPORT_PATH             = $TM_SUPPORT_PATH",
+      "The currently selected text or the empty string                                 TM_SELECTED_TEXT            = $TM_SELECTED_TEXT",
+      "The contents of the current line                                                TM_CURRENT_LINE             = $TM_CURRENT_LINE",
+      "The contents of the word under cursor or the empty string                       TM_CURRENT_WORD             = $TM_CURRENT_WORD",
+      "The zero-index based line number                                                TM_LINE_INDEX               = $TM_LINE_INDEX",
+      "The one-index based line number                                                 TM_LINE_NUMBER              = $TM_LINE_NUMBER",
+      "The full file path of the current document                                      TM_FILEPATH                 = $TM_FILEPATH",
+      "The directory of the current document                                           TM_DIRECTORY                = $TM_DIRECTORY",
+      "The filename of the current document without its extensions                     TM_FILENAME_BASE            = $TM_FILENAME_BASE",
+      "The filename of the current document                                            TM_FILENAME                 = $TM_FILENAME",
+      "User name                                                                       USER                        = $USER",
+      "The relative (to the opened workspace or folder) path of the current document   RELATIVE_FILEPATH           = $RELATIVE_FILEPATH",
+      "",
+      "The contents of your clipboard                                                  CLIPBOARD                   = $CLIPBOARD",
+      "The name of the opened workspace or folder                                      WORKSPACE_NAME              = $WORKSPACE_NAME",
+      "The path of the opened workspace or folder                                      WORKSPACE_FOLDER            = $WORKSPACE_FOLDER",
+      "",
+      "The current year                                                                CURRENT_YEAR                = $CURRENT_YEAR",
+      "The current year's last two digits                                              CURRENT_YEAR_SHORT          = $CURRENT_YEAR_SHORT",
+      "The month as two digits (example '02')                                          CURRENT_MONTH               = $CURRENT_MONTH",
+      "The full name of the month (example 'July')                                     CURRENT_MONTH_NAME          = $CURRENT_MONTH_NAME",
+      "The short name of the month (example 'Jul')                                     CURRENT_MONTH_NAME_SHORT    = $CURRENT_MONTH_NAME_SHORT",
+      "The day of the month                                                            CURRENT_DATE                = $CURRENT_DATE",
+      "The name of day (example 'Monday')                                              CURRENT_DAY_NAME            = $CURRENT_DAY_NAME",
+      "The short name of the day (example 'Mon')                                       CURRENT_DAY_NAME_SHORT      = $CURRENT_DAY_NAME_SHORT",
+      "The current hour in 24-hour clock format                                        CURRENT_HOUR                = $CURRENT_HOUR",
+      "The current minute                                                              CURRENT_MINUTE              = $CURRENT_MINUTE",
+      "The current second                                                              CURRENT_SECOND              = $CURRENT_SECOND",
+      "The number of seconds since the Unix epoch                                      CURRENT_SECONDS_UNIX        = $CURRENT_SECONDS_UNIX",
+      "",
+      "6 random Base-10 digits                                                         RANDOM                      = $RANDOM",
+      "Random Base-16 digits                                                           RANDOM_HEX                  = $RANDOM_HEX",
+      "A Version 4 UUID                                                                UUID                        = $UUID",
+      "",
+      "These were introduced because TM_SELECTED_TEXT is designed to be...             SELECT_RAW                  = $SELECT_RAW",
+      "...compatible with vscodes' behavior                                            SELECT_DEDENT               = $SELECT_DEDENT",
+      "",
+      "Varies according to the detected file type                                      LINE_COMMENT                = $LINE_COMMENT",
+      "Varies according to the detected file type                                      BLOCK_COMMENT_START         = $BLOCK_COMMENT_START",
+      "Varies according to the detected file type                                      BLOCK_COMMENT_END           = See next line!",
+      "$BLOCK_COMMENT_END"
+    ],
+    "description": "Dump/test use of all known variable names",
+    "prefix": "__snipvars"
+  },
+  "time": {
+    "body": [
+      "$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND $0"
+    ],
+    "description": "Time HH:MM:SS",
+    "prefix": "__time"
+  },
+  "uuid": {
+    "body": [
+      "$UUID"
+    ],
+    "description": "UUID v4 random string",
+    "prefix": "__uuid"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "class": {
+    "body": [
+      "/**",
+      " * @author ${VIM:\\$USER}",
+      " */",
+      "class $1 ${2:extends ${3:Parent} }{",
+      " constructor() {",
+      "  $0",
+      " }",
+      "}"
+    ],
+    "description": "New JS class",
+    "prefix": "__class"
+  }
+}

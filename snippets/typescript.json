@@ -1,0 +1,273 @@
+{
+  "#regionend": {
+    "body": [
+      "//#endregion"
+    ],
+    "description": "#endregion",
+    "prefix": "__regionend"
+  },
+  "#regionstart": {
+    "body": [
+      "//#region $0"
+    ],
+    "description": "#region",
+    "prefix": "__regionstart"
+  },
+  "classdefinition": {
+    "body": [
+      "class ${1:name} {",
+      " constructor(${2:parameters}) {",
+      "  $0",
+      " }",
+      "}"
+    ],
+    "description": "class",
+    "prefix": "__classdefinition"
+  },
+  "constructor": {
+    "body": [
+      "/**",
+      " *",
+      " */",
+      "constructor() {",
+      " super();",
+      " $0",
+      "}"
+    ],
+    "description": "ctor",
+    "prefix": "__constructor"
+  },
+  "defineafullproperty": {
+    "body": [
+      "",
+      "private _${1:value} : ${2:string};",
+      "public get ${1:value}() : ${2:string} {",
+      " return this._${1:value};",
+      "}",
+      "public set ${1:value}(v : ${2:string}) {",
+      " this._${1:value} = v;",
+      "}",
+      ""
+    ],
+    "description": "prop",
+    "prefix": "__defineafullproperty"
+  },
+  "do-whilestatement": {
+    "body": [
+      "do {",
+      " $0",
+      "} while (${1:condition});"
+    ],
+    "description": "dowhile",
+    "prefix": "__do-whilestatement"
+  },
+  "for-eachloopusing": {
+    "body": [
+      "${1:array}.forEach(${2:element} => {",
+      " $0",
+      "});"
+    ],
+    "description": "foreach",
+    "prefix": "__for-eachloopusing=>"
+  },
+  "for-inloop": {
+    "body": [
+      "for (const ${1:key} in ${2:object}) {",
+      " if (${2:object}.hasOwnProperty(${1:key})) {",
+      "  const ${3:element} = ${2:object}[${1:key}];",
+      "  $0",
+      " }",
+      "}"
+    ],
+    "description": "forin",
+    "prefix": "__for-inloop"
+  },
+  "for-ofloop": {
+    "body": [
+      "for (const ${1:iterator} of ${2:object}) {",
+      " $0",
+      "}"
+    ],
+    "description": "forof",
+    "prefix": "__for-ofloop"
+  },
+  "forloop": {
+    "body": [
+      "for (let ${1:index} = 0; ${1:index} < ${2:array}.length; ${1:index}++) {",
+      " const ${3:element} = ${2:array}[${1:index}];",
+      " $0",
+      "}"
+    ],
+    "description": "for",
+    "prefix": "__forloop"
+  },
+  "functionstatement": {
+    "body": [
+      "function ${1:name}(${2:params}:${3:type}) {",
+      " $0",
+      "}"
+    ],
+    "description": "function",
+    "prefix": "__functionstatement"
+  },
+  "if-elsestatement": {
+    "body": [
+      "if (${1:condition}) {",
+      " $0",
+      "} else {",
+      " ",
+      "}"
+    ],
+    "description": "ifelse",
+    "prefix": "__if-elsestatement"
+  },
+  "ifstatement": {
+    "body": [
+      "if (${1:condition}) {",
+      " $0",
+      "}"
+    ],
+    "description": "if",
+    "prefix": "__ifstatement"
+  },
+  "importexternalmodulestatement": {
+    "body": [
+      "import { $0 } from \"${1:module}\";"
+    ],
+    "description": "import statement",
+    "prefix": "__importexternalmodule."
+  },
+  "logerrortoconsole": {
+    "body": [
+      "console.error($1);",
+      "$0"
+    ],
+    "description": "error",
+    "prefix": "__logerrortoconsole"
+  },
+  "logtotheconsole": {
+    "body": [
+      "console.log($1);",
+      "$0"
+    ],
+    "description": "log",
+    "prefix": "__logtotheconsole"
+  },
+  "logwarningtoconsole": {
+    "body": [
+      "console.warn($1);",
+      "$0"
+    ],
+    "description": "warn",
+    "prefix": "__logwarningtoconsole"
+  },
+  "newstatement": {
+    "body": [
+      "const ${1:name} = new ${2:type}(${3:arguments});$0"
+    ],
+    "description": "new",
+    "prefix": "__newstatement"
+  },
+  "privatemethoddefinitionmethod": {
+    "body": [
+      "private ${1:name}() {",
+      " $0",
+      "}"
+    ],
+    "description": "private method",
+    "prefix": "__privatemethoddefinition"
+  },
+  "propertygetter": {
+    "body": [
+      "",
+      "public get ${1:value}() : ${2:string} {",
+      " ${3:return $0}",
+      "}",
+      ""
+    ],
+    "description": "get",
+    "prefix": "__propertygetter"
+  },
+  "propertysetter": {
+    "body": [
+      "",
+      "public set ${1:value}(v : ${2:string}) {",
+      " this.$3 = v;",
+      "}",
+      ""
+    ],
+    "description": "set",
+    "prefix": "__propertysetter"
+  },
+  "publicmethoddefinitionmethod": {
+    "body": [
+      "/**",
+      " * ${1:name}",
+      " */",
+      "public ${1:name}() {",
+      " $0",
+      "}"
+    ],
+    "description": "public method",
+    "prefix": "__publicmethoddefinition"
+  },
+  "settimeoutfunction": {
+    "body": [
+      "setTimeout(() => {",
+      " $0",
+      "}, ${1:timeout});"
+    ],
+    "description": "settimeout",
+    "prefix": "__settimeoutfunction"
+  },
+  "switchstatement": {
+    "body": [
+      "switch (${1:key}) {",
+      " case ${2:value}:",
+      "  $0",
+      "  break;",
+      "",
+      " default:",
+      "  break;",
+      "}"
+    ],
+    "description": "switch",
+    "prefix": "__switchstatement"
+  },
+  "throwexception": {
+    "body": [
+      "throw \"$1\";",
+      "$0"
+    ],
+    "description": "throw",
+    "prefix": "__throwexception"
+  },
+  "triple-slashreference": {
+    "body": [
+      "/// <reference path=\"$1\" />",
+      "$0"
+    ],
+    "description": "ref",
+    "prefix": "__triple-slashreference"
+  },
+  "try-catchstatement": {
+    "body": [
+      "try {",
+      " $0",
+      "} catch (${1:error}) {",
+      " ",
+      "}"
+    ],
+    "description": "trycatch",
+    "prefix": "__try-catchstatement"
+  },
+  "whilestatement": {
+    "body": [
+      "while (${1:condition}) {",
+      " $0",
+      "}"
+    ],
+    "description": "while",
+    "prefix": "__whilestatement"
+  }
+}

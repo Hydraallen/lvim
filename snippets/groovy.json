@@ -1,0 +1,47 @@
+{
+  "gradle_new_file": {
+    "body": [
+      "apply plugin: 'java'",
+      "",
+      "repositories {",
+      "    mavenCentral()",
+      "}",
+      "",
+      "dependencies {",
+      "    testCompile 'junit:junit:+'",
+      "}",
+      ""
+    ],
+    "description": "New Gradle File",
+    "prefix": "__gradle_new_file"
+  },
+  "spocktest": {
+    "body": [
+      "def \"Name #variable\"() {",
+      "    given:",
+      "        Map<String, Object> settings = [:]",
+      "",
+      "    expect:",
+      "        DataRequest dataRequest = new DataRequest([",
+      "                title   : rank, firstname: fname, middlename: mname, surname: sname",
+      "        ])",
+      "        dataRequest.setIdScreenRequest(new IdScreenRequest(phone, ip))",
+      "",
+      "    when:",
+      "        validateUser(user)",
+      "",
+      "    then:",
+      "        def error = thrown(expectedException)",
+      "        error.message == expectedMessage",
+      "",
+      "    where:",
+      "        rank   | fname  | mname   | sname       || expectedErrorName | expectedErrorString",
+      "        // _______________________ Valid data ____________________",
+      "        \"Dr\"   | \"Neil\" | \"Alden\" | \"Armstrong\" || null              | null",
+      "        \"Mr\"   | \"Neil\" | \"Alden\" | \"Armstrong\" || null              | null",
+      "}"
+    ],
+    "description": "New Spock test",
+    "prefix": "__spocktest"
+  }
+}

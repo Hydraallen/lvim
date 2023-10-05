@@ -1,0 +1,14 @@
+{
+  "property": {
+    "body": [
+      "db.default.rw.driverpath=/opt/dbdrivers/postgresql-42.3.2.jar",
+      "db.default.rw.driver=org.postgresql.Driver",
+      "db.default.rw.url=jdbc:postgresql://devdb.hooyu.com:5432/wai",
+      "db.default.rw.url=jdbc:postgresql://localhost:5432/wai",
+      "db.default.rw.username=user",
+      "db.default.rw.password=pwd"
+    ],
+    "description": "New property entry",
+    "prefix": "__property"
+  }
+}
