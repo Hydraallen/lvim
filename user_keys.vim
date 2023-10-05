@@ -8,6 +8,7 @@ nmap ; :
 nmap <S-x> :BufferKill<CR>
 nmap tt :NvimTreeFocus<cr>
 nmap lg :LazyGit<CR>
+nmap ra :RnvimrToggle<CR>
 
 
 
@@ -19,7 +20,7 @@ map z1 z=1
 
 " Codeium: See: https://github.com/Exafunction/codeium.vim
 imap <script><silent><nowait><expr> <A-Right> codeium#Accept()
-" imap <script><silent><nowait><expr> <A-PgUP> <Cmd>call codeium#CycleCompletions(1)<CR>
+imap <script><silent><nowait><expr> <A-PgUP> <Cmd>call codeium#CycleCompletions(1)<CR>
 " imap <script><silent><nowait><expr> <A-PgDown> <Cmd>call codeium#CycleCompletions(-1)<CR>
 " imap <script><silent><nowait><expr> <A-#> codeium#Accept()
 " imap <C-;>   <Cmd>call codeium#CycleCompletions(1)<CR>
