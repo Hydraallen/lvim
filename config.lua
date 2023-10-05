@@ -34,7 +34,7 @@ lvim.format_on_save                                 = false
 lvim.auto_complete                                  = true
 --lvim.colorscheme                                    = "zenburn"   -- https://github.com/jnurmine/Zenburn
 --lvim.colorscheme                                    = "tokyonight"
-lvim.colorscheme                                    = "onedark_vivid" -- https://github.com/olimorris/onedarkpro.nvim
+--lvim.colorscheme                                    = "onedark_vivid" -- https://github.com/olimorris/onedarkpro.nvim
 --lvim.colorscheme                                    = "onedark"
 --lvim.colorscheme                                    = "onelight"
 --lvim.colorscheme                                    = "onedark_dark"
@@ -138,10 +138,10 @@ vim.cmd('source ~/.config/lvim/lua/user/lualine.lua')
 -- Additional Plugins {{{1
 lvim.plugins = {
     --One Dark Theme
-    {
-        "olimorris/onedarkpro.nvim",
-        priority = 1000 -- Ensure it loads first
-    },
+    -- {
+    --     "olimorris/onedarkpro.nvim",
+    --     priority = 1000 -- Ensure it loads first
+    -- },
     -- Zen Mode
     {
         "folke/zen-mode.nvim",
