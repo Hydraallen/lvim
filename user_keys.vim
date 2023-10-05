@@ -7,6 +7,7 @@ nmap - Nzz
 nmap ; :
 nmap <S-x> :BufferKill<CR>
 nmap tt :NvimTreeFocus<cr>
+nmap lg :LazyGit<CR>
 
 
 
