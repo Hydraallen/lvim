@@ -90,7 +90,7 @@ $ brew install --cask font-hack-nerd-font
 
 - I use [onedark](https://github.com/olimorris/onedarkpro.nvim) theme as I also used it for VSCode.
 
-You can change it to zenburn or tokyonight by editing [`config.lua`](https://github.com/Hydraallen/lvim/blob/main/config.lua)
+You can change it to zenburn or tokyonight by editing [`config.lua`](https://github.com/Hydraallen/lvim/blob/main/config.lua). Or if you want to use the default theme of lunarvim, you can just delete all the following lines.
 
 ```lua
 lvim.colorscheme                                  	= "zenburn"   -- https://github.com/jnurmine/Zenburn
@@ -145,16 +145,21 @@ The line is split into 5 main sections, 3 on the left and 2 on the right:
   Note the column information is colour coded, >80 = Yellow >120 = Red.
   <!-- }}}1 -->
 
-# Extra Plugins
+# Extra Plugins and Simple Usage
 
 <!-- {{{1 -->
 
 I've added a few extra plugins I use to the configuration:
 
 + [Codeium](https://github.com/Exafunction/codeium.vim) "Free, ultrafast Copilot alternative for Vim and Neovim"
+  + Use `:Codeium Auth` to activate.
+  + Use `Tab` to get auto-suggestions.
+
+
 + [Lazygit](https://github.com/kdheepak/lazygit.nvim) <kbd>F8</kbd> or `lg` to open.
 + [Ranger](https://github.com/kevinhwang91/rnvimr) `ra` to open.
 + [wakatime](https://wakatime.com/plugins) Record coding time for you.
+  + You need to setup your account and paste API key.
 
 - [Codi](https://github.com/metakirby5/codi.vim) I alias "bc" on the command line to get a powerful calculator scratchpad using python.
 - [Colorizer](https://github.com/norcalli/nvim-colorizer.lua)
