@@ -217,3 +217,7 @@ See my dotfiles for a simple bash script to convert this GitHut markdown file in
 
 1. Check your neovim version. Are you on the newest nightly version?
 2. Reset your packer cache, and update lvim.
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Hydraallen/lvim&type=Date)](https://star-history.com/#Hydraallen/lvim&Date)
