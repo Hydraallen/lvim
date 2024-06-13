@@ -158,7 +158,7 @@ I've added a few extra plugins I use to the configuration:
   + Use `Tab` to get auto-suggestions.
 
 
-+ [Lazygit](https://github.com/kdheepak/lazygit.nvim) <kbd>F8</kbd> or `lg` to open.
++ [Lazygit](https://github.com/kdheepak/lazygit.nvim) <kbd>F8</kbd> or `gz` to open.
 + [Ranger](https://github.com/kevinhwang91/rnvimr) `ra` to open.
 + [wakatime](https://wakatime.com/plugins) Record coding time for you.
   + You need to setup your account and paste API key.
