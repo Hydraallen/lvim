@@ -1,12 +1,12 @@
-  },
-  "": {
+{
+  "help_hakura": {
     "body": [
       " Help Hakura understand the problem.",
       "",
       "a)",
       "$0"
     ],
-    "description": "",
-    "prefix": ""
+    "description": "Help Hakura problem template",
+    "prefix": "__help_hakura"
   }
 }

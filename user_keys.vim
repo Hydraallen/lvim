@@ -42,8 +42,14 @@ nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
 
 " <Ctrl-c> and yy copies to clipboard, paste with <shift-insert>
-vmap <C-c> y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
-vmap yy    y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
+" Cross-platform clipboard support (xclip for Linux, pbcopy for macOS)
+if executable("xclip")
+    vmap <C-c> y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
+    vmap yy    y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
+elseif executable("pbcopy")
+    vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
+    vmap yy    y:call system("pbcopy", getreg("\""))<CR>
+endif
 
 " Make current file executable using Eunuch.
 map <silent> <A-e> :Chmod a+x<CR>:set filetype=sh<CR>:echo "File is now executable!"<CR>
@@ -117,7 +123,7 @@ vnoremap <A-Down> :m '>+1<CR>gv=gv
 nmap gj :call JumpToSelection()<CR>
 
 " Function keys.
-map <silent> <F1> :!xdg-open $HOME/.config/lvim/cheatsheet.html<CR>
+map <silent> <F1> :!open $HOME/.config/lvim/cheatsheet.html<CR>
 map <silent> <F2> :call FoldingToggle()<CR>
 map <silent> <F3> :call ToggleAll()<CR>
 map <F4> :NvimTreeToggle<CR>

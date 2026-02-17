@@ -559,10 +559,10 @@ lvim.plugins = {
 
     -- trouble.nvim
     -- diagnostics, references, telescope results, quickfix and location lists
-    -- {
-    -- "folke/trouble.nvim",
-    -- cmd = "TroubleToggle",
-    -- },
+    {
+        "folke/trouble.nvim",
+        cmd = "TroubleToggle",
+    },
     -- Also define keybindings in config.lua
 
     -- lvim.builtin.which_key.mappings["t"] = {

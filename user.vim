@@ -84,13 +84,16 @@ function! SnippetSave()
 endfunction
 
 function! OpenHelpAndCheatSheets()
-    let folder = "/home/jim/Nextcloud/CheatSheets/"
+    let folder = $HOME . "/Nextcloud/CheatSheets/"
+    if !isdirectory(folder)
+        let folder = $HOME . "/Documents/CheatSheets/"
+    endif
     let number = 2 " The number to display to the user.
     let cheattext = [] " The text to display to the user.
     let cheaturis = [] " The files/URL's to open.
 
     " Header and blank line.
-    call add(cheattext, " ﯭ Help and Cheat Sheets for ".&filetype)
+    call add(cheattext, " Help and Cheat Sheets for ".&filetype)
     call add(cheattext, "")
 
     if filereadable(folder.&filetype.'.md')
@@ -181,7 +184,14 @@ function! FigletCurrentLine()
         let ce=comment[1]
     endif
 
-    silent exec ':read !/home/jim/bin/dotfiles/bin/ban "'.cs.'" "'.ce.'" "'.line.'"'
+    let ban_script = $HOME . '/bin/dotfiles/bin/ban'
+    if executable(ban_script)
+        silent exec ':read !'.ban_script.' "'.cs.'" "'.ce.'" "'.line.'"'
+    elseif executable('figlet')
+        silent exec ':read !figlet "'.line.'"'
+    else
+        echo "Error: Neither ban script nor figlet found"
+    endif
 endfunction
 
 function! PrettyPrintFile()
