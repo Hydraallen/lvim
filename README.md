@@ -1,9 +1,16 @@
 <!-- Shields -->
 <!-- {{{1 -->
 
-![update](https://img.shields.io/badge/status-updating-brightgreen.svg)
+![status](https://img.shields.io/badge/status-unmaintained-red.svg)
 [![GitHub License](https://img.shields.io/github/license/hydraallen/lvim)](https://github.com/Hydraallenl/lvim/blob/master/LICENSE)
 [![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/Hydraallen/lvim)
+
+<!-- }}}1 -->
+
+<!-- Deprecation Notice -->
+<!-- {{{1 -->
+
+> ⚠️ **No longer maintained:** I have stopped maintaining this configuration and moved to [LazyVim](https://github.com/Hydraallen/nvim).
 
 <!-- }}}1 -->
 
